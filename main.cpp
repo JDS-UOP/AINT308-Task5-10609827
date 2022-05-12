@@ -99,12 +99,9 @@ int main()
         HoughLines(maskedLaneFrame, laneMarking, rhoRes, thetaRes, laneThreshold);
         HoughLines(maskedLaneFrame, middleMarking, rhoRes, thetaRes, middleThreshold);
 
-        Point pt1, pt2;
-
         //Print Hough lines on original frame
         for (int i = 0; i < (int)laneMarking.size(); i++){
             for (int j = 0; j < (int)middleMarking.size(); j++){
-                line(Frame, pt1, pt2, Scalar(0, 0, 255), 2);
                 lineRT(Frame, laneMarking[i], Scalar(0, 0, 255), 2);
                 lineRT2(Frame, middleMarking[j], Scalar(0, 255, 0), 2);
                 }
@@ -118,6 +115,3 @@ int main()
         waitKey(10);
     }
 }
-
-
-
